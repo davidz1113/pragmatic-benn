@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Login"
     android:weightSum="10"
+    android:layout_margin="20dp"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -24,8 +25,70 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="4">
+        android:layout_weight="4"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:textSize="16dp"
+            android:hint="Correo Electronico"
+            android:id="@+id/id_et_user"
+            android:paddingLeft="15dp"
+            android:background="@drawable/circle_border_input"
+            android:layout_marginBottom="10dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:inputType="textPassword"
+            android:hint="Contraseña"
+            android:textSize="16dp"
+            android:paddingLeft="15dp"
+            android:layout_below="@id/id_et_user"
+            android:background="@drawable/circle_border_input"
+            android:id="@+id/id_ed_password"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_ed_password"
+            android:textSize="13sp"
+            android:textStyle="italic"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Solicitar contraseña nuevamente"
+            android:id="@+id/id_tv_forgot_pass"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_tv_forgot_pass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="63dp"
+            android:text="INICIAR SESIÓN"
+            android:textSize="10dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/id_tv_version"
+                android:text="Versión 2.0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Al crear la cuenta se acepta nuestra Política de Privacidad, así como los Términos y Condiciones"
+                android:id="@+id/id_tv_logintext1"
+                android:layout_below="@id/id_tv_version"/>
+
+        </RelativeLayout>
     </RelativeLayout>
+
 
 </LinearLayout>
