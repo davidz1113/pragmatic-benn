@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Fragment.WelcomeStep2Fragment"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Gracias\nAhora ayúdenos a identificar sus intereses para mejorar su experiencia. !seleccione las categorias que más le gusten!" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher_foreground"
+                android:layout_gravity="center"/>
+            <ImageButton
+                android:layout_width="130dp"
+                android:layout_height="110dp"
+                android:src="@drawable/ic_launcher_foreground"
+                android:layout_gravity="center"/>
+            <ImageButton
+                android:layout_width="130dp"
+                android:layout_height="110dp"
+                android:src="@drawable/ic_launcher_foreground"
+                android:layout_gravity="center"/>
+            <ImageButton
+                android:layout_width="130dp"
+                android:layout_height="110dp"
+                android:src="@drawable/ic_launcher_foreground"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:drawableTop="@drawable/ic_launcher_foreground"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

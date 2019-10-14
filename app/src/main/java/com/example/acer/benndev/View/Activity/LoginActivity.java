@@ -1,4 +1,4 @@
-package com.example.acer.benndev;
+package com.example.acer.benndev.View.Activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,13 +12,22 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.acer.benndev.Interactor.LoginInteractor;
+import com.example.acer.benndev.R;
 
-public class Login extends AppCompatActivity {
+
+public class LoginActivity extends AppCompatActivity {
+
+    LoginInteractor loginInteractor;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        loginInteractor = new LoginInteractor(this);
         TextView txtloggin1 = findViewById(R.id.id_tv_logintext1);
         String textLogin = txtloggin1.getText().toString();
         SpannableString textSpann = new SpannableString(textLogin);
