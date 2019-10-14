@@ -1,7 +1,9 @@
-package com.example.acer.benndev;
+package com.example.acer.benndev.View.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.acer.benndev.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

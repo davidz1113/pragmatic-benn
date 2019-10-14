@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.acer.benndev.RegisterActivity">
+    tools:context="com.example.acer.benndev.View.Activity.RegisterActivity">
 
 
-    <fragment android:name="com.example.acer.benndev.EnterEmailFragment"
+    <fragment android:name="com.example.acer.benndev.View.Fragment.EnterEmailFragment"
         android:id="@+id/enterfrg"
         android:layout_weight="1"
         android:layout_width="0dp"
