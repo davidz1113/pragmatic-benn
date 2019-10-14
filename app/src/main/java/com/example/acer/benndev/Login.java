@@ -1,5 +1,6 @@
 package com.example.acer.benndev;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,7 +41,8 @@ public class Login extends AppCompatActivity {
         ClickableSpan clickTermsAndConditions = new ClickableSpan() {
             @Override
             public void onClick( View widget) {
-
+                Intent intent = new Intent(widget.getContext(),RegisterActivity.class);
+                startActivity(intent);
             }
 
             @Override
