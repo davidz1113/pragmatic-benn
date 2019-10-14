@@ -1,5 +1,6 @@
 package com.example.acer.benndev;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,13 +19,9 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         TextView txtloggin1 = findViewById(R.id.id_tv_logintext1);
-
         String textLogin = txtloggin1.getText().toString();
-
         SpannableString textSpann = new SpannableString(textLogin);
-
         ClickableSpan clickPoliticsPrivacity = new ClickableSpan() {
             @Override
             public void onClick(View widget) {
@@ -58,4 +55,5 @@ public class Login extends AppCompatActivity {
         txtloggin1.setMovementMethod(LinkMovementMethod.getInstance());
 
     }
+
 }
