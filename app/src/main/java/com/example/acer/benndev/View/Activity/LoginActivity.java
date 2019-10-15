@@ -20,13 +20,10 @@ public class LoginActivity extends AppCompatActivity {
 
     LoginInteractor loginInteractor;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         loginInteractor = new LoginInteractor(this);
         TextView txtloggin1 = findViewById(R.id.id_tv_logintext1);
         String textLogin = txtloggin1.getText().toString();
@@ -60,10 +57,10 @@ public class LoginActivity extends AppCompatActivity {
         textSpann.setSpan(clickPoliticsPrivacity,37,59, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         textSpann.setSpan(clickTermsAndConditions,74,96, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-
         txtloggin1.setText(textSpann);
         txtloggin1.setMovementMethod(LinkMovementMethod.getInstance());
-
     }
+
+
 
 }
