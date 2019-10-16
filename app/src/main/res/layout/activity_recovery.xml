@@ -1,49 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="10"
     tools:context="com.example.acer.benndev.View.Activity.RecoveryActivity">
 
 
-    <FrameLayout
 
-        android:id="@+id/framelayout_enter_email"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_enter_email"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:background="@color/colorPrimary"
         >
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Regresar"
-            android:textSize="10dp"
-            android:onClick="goBack"
+            android:text="Ingrese su correo"
+            android:textSize="24sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="@android:color/white"
             />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_weight="8.5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+
+        <FrameLayout
+
+            android:id="@+id/framelayout_enter_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_enter_email" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Continuar"
-            android:onClick="nextStep"
-            android:textSize="10dp" />
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Regresar"
+                android:textSize="10dp"
+                android:onClick="goBack" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Continuar"
+                android:onClick="nextStep"
+                android:textSize="10dp" />
 
 
-    </LinearLayout>
+        </LinearLayout>
 
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

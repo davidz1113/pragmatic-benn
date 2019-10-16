@@ -28,7 +28,7 @@ public class RecoveryActivity extends AppCompatActivity {
         System.out.println(fragmentEnterId.isAdded());
 
         transaction = getSupportFragmentManager().beginTransaction();
-        fragmentEnterEmail.setRetainInstance(true);
+        //fragmentEnterEmail.setRetainInstance(true);
         transaction.add(R.id.framelayout_enter_email, fragmentEnterEmail).commit();
     }
 
@@ -43,9 +43,8 @@ public class RecoveryActivity extends AppCompatActivity {
 
     public void goBack(View v){
         if(getSupportFragmentManager().getBackStackEntryCount()>0){
-            System.out.println(fragmentEnterEmail.isHidden());
+            //System.out.println(fragmentEnterEmail.isHidden());
             //getSupportFragmentManager().beginTransaction().hide(fragmentEnterId).show(fragmentEnterEmail).commit();
-
             getSupportFragmentManager().popBackStack();
         }else{
             super.onBackPressed();

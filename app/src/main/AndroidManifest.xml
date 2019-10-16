@@ -17,9 +17,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".View.Activity.RecoveryActivity"></activity>
+        <activity android:name=".View.Activity.RecoveryActivity"
+            android:theme="@style/AppTheme2"
+            ></activity>
 
-        <activity android:name="View.Activity.WelcomeActivity"></activity>
+        <activity android:name=".View.Activity.WelcomeActivity"></activity>
 
     </application>
 
