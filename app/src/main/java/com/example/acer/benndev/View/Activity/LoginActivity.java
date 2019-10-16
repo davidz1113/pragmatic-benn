@@ -2,6 +2,7 @@ package com.example.acer.benndev.View.Activity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -28,6 +29,9 @@ public class LoginActivity extends AppCompatActivity {
         TextView txtloggin1 = findViewById(R.id.id_tv_logintext1);
         String textLogin = txtloggin1.getText().toString();
         SpannableString textSpann = new SpannableString(textLogin);
+
+        final int colorAccent = ContextCompat.getColor(this, R.color.colorAccent);;
+
         ClickableSpan clickPoliticsPrivacity = new ClickableSpan() {
             @Override
             public void onClick(View widget) {
@@ -37,20 +41,20 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void updateDrawState(TextPaint ds) {
                 super.updateDrawState(ds);
-                ds.setColor(Color.BLUE);
+                ds.setColor(colorAccent);
+
             }
         };
         ClickableSpan clickTermsAndConditions = new ClickableSpan() {
             @Override
             public void onClick( View widget) {
-                Intent intent = new Intent(widget.getContext(),RecoveryActivity.class);
-                startActivity(intent);
+
             }
 
             @Override
             public void updateDrawState(TextPaint ds) {
                 super.updateDrawState(ds);
-                ds.setColor(Color.BLUE);
+                ds.setColor(colorAccent);
             }
         };
         //Al crear la cuenta se acepta nuestra Política de Privacidad, así como los Términos y Condiciones
@@ -62,5 +66,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    public void goToRecover(View v){
+        Intent intent = new Intent(this,RecoveryActivity.class);
+        startActivity(intent);
+    }
 
 }
