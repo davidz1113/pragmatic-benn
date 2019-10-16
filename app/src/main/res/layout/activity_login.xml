@@ -96,7 +96,11 @@
             android:layout_marginBottom="10dp"
             android:text="¿Olvidó su contraseña?"
             android:textColor="@color/colorAccent"
-            android:id="@+id/id_tv_forgot_pass"/>
+            android:id="@+id/id_tv_forgot_pass"
+            android:onClick="goToRecover"
+            />
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

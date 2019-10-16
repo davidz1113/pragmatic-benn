@@ -20,4 +20,17 @@
         <item name="boxStrokeWidth">2dp</item>
     </style>
 
+
+    <style name="style_button1" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:background">@drawable/circle_border_input</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="style_button2" parent="style_button1">
+        <item name="android:background">@drawable/circle_border_input_background</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
 </resources>
