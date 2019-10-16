@@ -19,7 +19,7 @@
 
         <activity android:name=".View.Activity.RegisterActivity"></activity>
 
-        <activity android:name=".View.Activity.WelcomeActivity"></activity>
+        <activity android:name="View.Activity.WelcomeActivity"></activity>
 
     </application>
 
