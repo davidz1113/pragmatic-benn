@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         ClickableSpan clickTermsAndConditions = new ClickableSpan() {
             @Override
             public void onClick( View widget) {
-                Intent intent = new Intent(widget.getContext(),RegisterActivity.class);
+                Intent intent = new Intent(widget.getContext(),RecoveryActivity.class);
                 startActivity(intent);
             }
 

@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.acer.benndev.View.Activity.RegisterActivity">
+    tools:context="com.example.acer.benndev.View.Activity.RecoveryActivity">
 
 
-    <fragment android:name="com.example.acer.benndev.View.Fragment.EnterEmailFragment"
-        android:id="@+id/enterfrg"
+    <FrameLayout
 
+        android:id="@+id/framelayout_enter_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_enter_email"/>
@@ -29,7 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Regresar"
-            android:textSize="10dp" />
+            android:textSize="10dp"
+            android:onClick="goBack"
+            />
 
         <Button
             android:layout_width="0dp"
@@ -37,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Continuar"
+            android:onClick="nextStep"
             android:textSize="10dp" />
 
 
