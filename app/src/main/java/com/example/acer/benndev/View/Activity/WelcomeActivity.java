@@ -13,6 +13,6 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         //Fragment fragment = new WelcomeStep1Fragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_welcome_step1, new WelcomeStep1Fragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout_welcome_step, new WelcomeStep1Fragment()).commit();
     }
 }

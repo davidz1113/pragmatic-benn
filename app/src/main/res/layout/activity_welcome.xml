@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".View.Activity.WelcomeActivity"
     android:layout_margin="10dp"
+    android:weightSum="10"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,10 +65,27 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/framelayout_welcome_step1"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:id="@+id/framelayout_welcome_step"
         android:layout_centerInParent="true">
 
     </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Anterior"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="siguiente"/>
+
+    </LinearLayout>
 
 </LinearLayout>
