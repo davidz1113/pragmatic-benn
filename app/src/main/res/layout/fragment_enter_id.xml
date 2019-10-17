@@ -1,13 +1,44 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context="com.example.acer.benndev.View.Fragment.EnterIdFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/id_tv_enter_id_msg1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Hemos asociado su correo con el siguiente Número de Identificación:"
+        android:textSize="16sp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/id_tv_enter_id_text_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_tv_enter_id_msg1"
+        android:layout_marginTop="20dp"
+        android:text="*****1234"
+        android:textSize="16sp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_enter_id_identifi"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_tv_enter_id_text_id"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresar número de identificación"
+            android:inputType="text"
+            android:paddingLeft="16dp"
+            android:textSize="16dp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+</RelativeLayout>
