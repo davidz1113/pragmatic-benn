@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void initComponentsView(){
         txtloggin1 = findViewById(R.id.id_tv_logintext1);
-        buttonSingin=findViewById(R.id.id_log_btn_singin);
+        buttonSingin = findViewById(R.id.id_log_btn_singin);
     }
 
 

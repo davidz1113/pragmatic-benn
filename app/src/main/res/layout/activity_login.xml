@@ -114,12 +114,11 @@
                 <Button
                     android:layout_width="150dp"
                     android:layout_height="36dp"
+                    style="@style/style_buttonGray"
                     android:background="@drawable/button_primary"
                     android:text="INICIAR SESIÓN"
                     android:layout_centerInParent="true"
-                    android:textColor="@android:color/white"
-                    android:id="@+id/id_log_btn_singin"
-                    android:textSize="14dp" />
+                    android:id="@+id/id_log_btn_singin"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"

@@ -26,10 +26,27 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="style_buttonGray">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/colorGrayDark</item>
+    </style>
 
     <style name="style_button2" parent="style_button1">
         <item name="android:background">@drawable/circle_border_input_background</item>
         <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="style_checkBox">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">#bd000000</item>
+    </style>
+
+    <style name="style_buttonPrimaryDark">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:radius">4dp</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
 
