@@ -108,6 +108,7 @@ public class LoginActivity extends AppCompatActivity {
         txtloggin1 = findViewById(R.id.id_tv_logintext1);
         buttonSingin = findViewById(R.id.id_log_btn_singin);
         rlNotifyUser = findViewById(R.id.id_rl_act_login_notify);
+
     }
 
 
