@@ -61,28 +61,26 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="6"
+        android:layout_weight="7"
         android:background="@mipmap/header_bg">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+           android:layout_centerInParent="true"
             android:layout_marginTop="30dp"
             android:background="@mipmap/logo" />
 
 
     </RelativeLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3">
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingLeft="15dp"
+            android:layout_weight="4"
             android:paddingRight="15dp"
             android:paddingTop="50dp">
 
@@ -157,6 +155,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/id_tv_forgot_pass"
+
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -203,6 +202,6 @@
 
         </RelativeLayout>
 
-    </ScrollView>
+
 
 </LinearLayout>
