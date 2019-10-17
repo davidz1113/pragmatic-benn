@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
     LoginInteractor loginInteractor;
     Button buttonSingin;
     RelativeLayout rlNotifyUser;
+
+    private final static int REQUEST_CODE_1 = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void goToRecover(View v) {
         Intent intent = new Intent(this, RecoveryActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, REQUEST_CODE_1);
     }
 
 
@@ -132,7 +135,29 @@ public class LoginActivity extends AppCompatActivity {
         win.setAttributes(winParams);
     }
 
+    /**
+     * metodo que oculta el panel de notificacion cuando llega desde el recuperar contraseña
+     *
+     * @param view
+     */
     public void setVisibility(View view) {
         rlNotifyUser.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+
+            case REQUEST_CODE_1:
+                if (data != null) {//se valida que vengan datos desde la actividad del registro
+                    String stringExtra = data.getStringExtra("show_notify");
+                    System.out.println(stringExtra);
+                    rlNotifyUser.setVisibility(View.VISIBLE);
+                    //se debe cambiar el texto de la notificacion con el correo que ha diligenciado en el fragmento de correo.
+                }
+                break;
+        }
     }
 }

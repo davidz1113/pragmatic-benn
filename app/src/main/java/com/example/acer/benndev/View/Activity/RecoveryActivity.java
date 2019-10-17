@@ -1,5 +1,6 @@
 package com.example.acer.benndev.View.Activity;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -58,6 +59,15 @@ public class RecoveryActivity extends AppCompatActivity {
                     .addToBackStack(null).commit();
             setTitleText("Corrobore su identificación");
 
+        }else if(fragmentEnterId.isAdded()){//Si se presiono de nuevo y el fragmento de mostrar la id ya esta.
+            //se debe validar en el backend que tanto la identificación y el correo esten correos.
+            //una vez validada dicha informacion, se procede a salir de esta activity y mostrar la notificacion en el
+            //activity del loggin.
+            Intent intent = new Intent();
+            intent.putExtra("show_notify", "hola");
+            setResult(RESULT_OK, intent);
+            finish();
+            //System.out.println("entro aqui");
         }
     }
 
