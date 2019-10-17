@@ -1,152 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Activity.LoginActivity"
     android:orientation="vertical"
-    >
+    tools:context=".View.Activity.LoginActivity">
 
     <RelativeLayout
+        android:id="@+id/id_rl_act_login_notify"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="7"
-        android:background="@mipmap/header_bg">
-
-      <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_centerHorizontal="true"
-          android:layout_marginTop="30dp"
-          android:background="@mipmap/logo"/>
-
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="50dp">
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/til_user"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/LoginTextInputLayoutStyle"
-            >
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:textSize="16dp"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:hint="Correo Electrónico"
-            android:inputType="textEmailAddress"
-            android:id="@+id/id_et_user"
-            android:paddingLeft="15dp"
-            android:maxLength="30"
-            />
-
-        </android.support.design.widget.TextInputLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/til_user"
-            android:textSize="12sp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="2dp"
-            android:text="Ej. usuario@email.com"/>
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/til_pass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/til_user"
-            style="@style/LoginTextInputLayoutStyle"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="#44000000"
-            android:layout_marginTop="30dp">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:inputType="textPassword"
-            android:hint="Contraseña"
-            android:maxLength="30"
-            android:textSize="16dp"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:paddingLeft="15dp"
-            android:id="@+id/id_ed_password"
-            android:drawableRight="@drawable/ic_visibility_black"
-            android:paddingRight="10dp"
-            />
-
-        </android.support.design.widget.TextInputLayout>
+        android:layout_height="112dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/til_pass"
-            android:textSize="14sp"
-            android:layout_alignParentRight="true"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="¿Olvidó su contraseña?"
-            android:textColor="@color/colorAccent"
-            android:id="@+id/id_tv_forgot_pass"
-            android:onClick="goToRecover"
-            />
-
+            android:id="@+id/id_tv_act_correo_enviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se ha enviado la nueva contraseña a su correo c.flores@correo.com. Siga las instrucciones en él."
+            android:textSize="14sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/id_tv_forgot_pass"
-            android:orientation="vertical">
-            <RelativeLayout
-                android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_tv_act_correo_enviar"
+            android:gravity="end|bottom"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            >
+
+            <Button
+                android:id="@+id/id_btn_act_login_send_again"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3">
+                android:layout_marginRight="10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="Enviar de nuevo"
+                android:textColor="@color/colorAccent" />
 
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="36dp"
-                    style="@style/style_buttonGray"
-                    android:background="@drawable/button_primary"
-                    android:text="INICIAR SESIÓN"
-                    android:layout_centerInParent="true"
-                    android:id="@+id/id_log_btn_singin"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/id_btn_act_login_ok"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/id_tv_version"
-                    android:textSize="16sp"
-                    android:text="Versión 2.0" />
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="setVisibility"
+                android:text="Entendido"
+                android:textColor="@color/colorAccent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Al crear la cuenta se acepta nuestra Política de Privacidad, así como los Términos y Condiciones"
-                    android:id="@+id/id_tv_logintext1"
-                    android:textSize="16sp"
-                    android:textAlignment="center"
-                    android:layout_below="@id/id_tv_version"/>
 
-            </RelativeLayout>
         </LinearLayout>
 
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:background="@mipmap/header_bg">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@mipmap/logo" />
 
 
     </RelativeLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="50dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_user"
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/id_et_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:hint="Correo Electrónico"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="30"
+                    android:paddingLeft="15dp"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/til_user"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="2dp"
+                android:text="Ej. usuario@email.com"
+                android:textSize="12sp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_pass"
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/til_user"
+                android:layout_marginTop="30dp"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#44000000">
+
+                <EditText
+                    android:id="@+id/id_ed_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:drawableRight="@drawable/ic_visibility_black"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:maxLength="30"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/id_tv_forgot_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/til_pass"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:onClick="goToRecover"
+                android:text="¿Olvidó su contraseña?"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/id_tv_forgot_pass"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <Button
+                        android:id="@+id/id_log_btn_singin"
+                        android:layout_width="150dp"
+                        android:layout_height="36dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/button_primary"
+                        android:text="INICIAR SESIÓN"
+                        android:textColor="@android:color/white"
+                        android:textSize="14dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/id_tv_version"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Versión 2.0"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/id_tv_logintext1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/id_tv_version"
+                        android:text="Al crear la cuenta se acepta nuestra Política de Privacidad, así como los Términos y Condiciones"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </LinearLayout>

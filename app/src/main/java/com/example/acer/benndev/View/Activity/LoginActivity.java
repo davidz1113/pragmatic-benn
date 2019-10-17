@@ -1,7 +1,9 @@
 package com.example.acer.benndev.View.Activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +13,10 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.acer.benndev.Interactor.LoginInteractor;
@@ -23,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txtloggin1;
     LoginInteractor loginInteractor;
     Button buttonSingin;
+    RelativeLayout rlNotifyUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +49,8 @@ public class LoginActivity extends AppCompatActivity {
         String textLogin = txtloggin1.getText().toString();
         SpannableString textSpann = new SpannableString(textLogin);
 
-        final int colorAccent = ContextCompat.getColor(this, R.color.colorAccent);;
+        final int colorAccent = ContextCompat.getColor(this, R.color.colorAccent);
+
 
         ClickableSpan clickPoliticsPrivacity = new ClickableSpan() {
             @Override
@@ -60,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         };
         ClickableSpan clickTermsAndConditions = new ClickableSpan() {
             @Override
-            public void onClick( View widget) {
+            public void onClick(View widget) {
 
             }
 
@@ -72,35 +79,61 @@ public class LoginActivity extends AppCompatActivity {
         };
 
 
-
-
-
         //Al crear la cuenta se acepta nuestra Política de Privacidad, así como los Términos y Condiciones
-        textSpann.setSpan(clickPoliticsPrivacity,37,59, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        textSpann.setSpan(clickTermsAndConditions,74,96, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textSpann.setSpan(clickPoliticsPrivacity, 37, 59, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textSpann.setSpan(clickTermsAndConditions, 74, 96, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         txtloggin1.setText(textSpann);
         txtloggin1.setMovementMethod(LinkMovementMethod.getInstance());
+
+
+        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
+            setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
+        }
+        if (Build.VERSION.SDK_INT >= 19) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        }
+        //make fully Android Transparent Status bar
+        if (Build.VERSION.SDK_INT >= 21) {
+            setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
     }
 
 
-
-    public void initComponentsView(){
+    public void initComponentsView() {
         txtloggin1 = findViewById(R.id.id_tv_logintext1);
         buttonSingin = findViewById(R.id.id_log_btn_singin);
+        rlNotifyUser = findViewById(R.id.id_rl_act_login_notify);
+
     }
 
 
-    public void onClickSingIn(View v){
-        Intent intent = new Intent (v.getContext(), WelcomeActivity.class);
+    public void onClickSingIn(View v) {
+        Intent intent = new Intent(v.getContext(), WelcomeActivity.class);
         startActivityForResult(intent, 0);
     }
 
 
-      public void goToRecover(View v){
-            Intent intent = new Intent(this,RecoveryActivity.class);
-            startActivity(intent);
+    public void goToRecover(View v) {
+        Intent intent = new Intent(this, RecoveryActivity.class);
+        startActivity(intent);
+    }
+
+
+    public static void setWindowFlag(Activity activity, final int bits, boolean on) {
+
+        Window win = activity.getWindow();
+        WindowManager.LayoutParams winParams = win.getAttributes();
+        if (on) {
+            winParams.flags |= bits;
+        } else {
+            winParams.flags &= ~bits;
         }
+        win.setAttributes(winParams);
+    }
 
-
+    public void setVisibility(View view) {
+        rlNotifyUser.setVisibility(View.GONE);
+    }
 }
