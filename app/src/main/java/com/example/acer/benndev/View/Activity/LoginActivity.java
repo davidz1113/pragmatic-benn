@@ -82,9 +82,9 @@ public class LoginActivity extends AppCompatActivity {
         };
 
 
-        //Al crear la cuenta se acepta nuestra Política de Privacidad, así como los Términos y Condiciones
-        textSpann.setSpan(clickPoliticsPrivacity, 37, 59, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        textSpann.setSpan(clickTermsAndConditions, 74, 96, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //Al utilizar la aplicación usted acepta nuestra Política de Privacidad, así como los Términos y Condiciones
+        textSpann.setSpan(clickPoliticsPrivacity, 47, 69, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textSpann.setSpan(clickTermsAndConditions, 84, 106, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         txtloggin1.setText(textSpann);
         txtloggin1.setMovementMethod(LinkMovementMethod.getInstance());

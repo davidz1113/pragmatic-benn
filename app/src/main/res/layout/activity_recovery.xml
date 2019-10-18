@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
     tools:context="com.example.acer.benndev.View.Activity.RecoveryActivity">
@@ -19,21 +19,21 @@
             android:id="@+id/id_tv_act_recovery_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ingrese su correo"
-            android:textSize="24sp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:textColor="@android:color/white" />
+            android:text="Ingrese su correo"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
 
     </RelativeLayout>
 
 
     <RelativeLayout
-        android:layout_weight="8.5"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="8.5">
 
 
         <FrameLayout
@@ -41,6 +41,7 @@
             android:id="@+id/framelayout_enter_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@id/linear_buttons"
             tools:layout="@layout/fragment_enter_email" />
 
 
@@ -48,41 +49,59 @@
             android:id="@+id/linear_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_alignParentBottom="true"
-            >
+            android:orientation="vertical">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/colorGray"
                 android:layout_marginBottom="4dp"
-                />
+                android:background="@color/colorGray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_margin="16dp"
-                >
+                android:orientation="horizontal">
 
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="36dp"
-                    android:text="Regresar"
-                    android:onClick="goBack"
+                <LinearLayout
                     style="@style/style_button1"
-                    android:layout_marginRight="16dp" />
-
-                <Button
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="36dp"
-                    android:text="Continuar"
-                    android:onClick="nextStep"
-                    style="@style/style_button2" />
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:onClick="goBack"
+                        android:text="Regresar"
+                        android:textColor="@color/colorAccent" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/style_button2"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1">
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:onClick="nextStep"
+                        android:text="Continuar"
+                        android:background="?attr/selectableItemBackground"
+                        android:textColor="@android:color/white"
+                        />
+
+                </LinearLayout>
+
+
             </LinearLayout>
 
 
